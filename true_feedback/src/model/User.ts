@@ -1,6 +1,8 @@
 import mongoose ,{Schema,Document, model} from "mongoose";
 
 export interface Message extends Document{
+    _id: string; //Even though Mongoose provides _id at runtime, 
+    // TypeScript needs to see it in your interface to allow you to use it without type assertions.
     content:string;
     createdAt: Date
 }

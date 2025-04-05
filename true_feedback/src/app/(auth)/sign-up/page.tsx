@@ -150,7 +150,7 @@ export default function SignUpForm() {
                 <FormItem>
                   <FormLabel htmlFor="email" >Email</FormLabel>
                   <Input autoComplete="email"  id="email" {...field} name="email" />
-                  <p className='text-muted text-sm'>We will send you a verification code</p>
+                  <p className=' text-muted-foreground text-sm'>We will send you a verification code</p>
                   <FormMessage />
                 </FormItem>
               )}

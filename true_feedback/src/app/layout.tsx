@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import './globals.css'
+import AuthProvider from "@/context/AuthProvider";
+import { Toaster } from "@/components/ui/sonner"
 import Navbar from "@/components/Navbar";
 //or// import { Toaster } from "sonner";
 
@@ -26,13 +29,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      
+      <AuthProvider>
         <body suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar/>
-        {children}       
-      </body>     
+        {/* <Navbar/> */}
+        {children}
+        <Toaster />
+      </body>
+      </AuthProvider>
+      
     </html>
   );
 }
